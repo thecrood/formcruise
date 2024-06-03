@@ -3,6 +3,24 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import axios from 'axios'; // Import Axios for making HTTP requests
+
+// Define API topic names
+const apiTopics = [
+  "API 1",
+  "API 2",
+  "API 3",
+  "API 4",
+  "API 5",
+  "API 6",
+  "API 7",
+  "API 8",
+  "API 9",
+  "API 10",
+  "API 11",
+  "API 12",
+  "API 13",
+];
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -23,6 +41,8 @@ function TabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
+          <GiphyComponent /> {/* Render GiphyComponent */}
+          <br />
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -37,6 +57,38 @@ function a11yProps(index: number) {
   };
 }
 
+const GiphyComponent = () => {
+  const [imageUrl, setImageUrl] = React.useState('');
+  const [text, setText] = React.useState('');
+
+  React.useEffect(() => {
+    const fetchImageAndText = async () => {
+      try {
+        // Fetch random image from Lorem Picsum API
+        const imageResponse = await axios.get('https://picsum.photos/200');
+        const imageUrl = imageResponse.request.responseURL;
+
+        // Generate random text (you can replace this with your own text generation logic)
+        const randomText = Math.random().toString(36).substring(2, 15);
+        
+        setImageUrl(imageUrl);
+        setText(randomText);
+      } catch (error) {
+        console.error('Error fetching image and text:', error);
+      }
+    };
+
+    fetchImageAndText();
+  }, []);
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '20vh', transform: 'translateY(-50%)' }}>
+      {imageUrl && <img src={imageUrl} alt="Random Image" style={{ maxWidth: '100%' }} />}
+      <p>{text}</p>
+    </div>
+  );
+};
+
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
 
@@ -46,7 +98,7 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', marginTop:'5rem'}}
+      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', marginTop: '5rem' }} // Adjust marginTop value as needed
     >
       <Tabs
         orientation="vertical"
@@ -56,138 +108,18 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider' }}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
-        <Tab label="Item Eight" {...a11yProps(7)} />
-        <Tab label="Item Nine" {...a11yProps(8)} />
-        <Tab label="Item Ten" {...a11yProps(9)} />
-        <Tab label="Item Eleven" {...a11yProps(10)} />
-        <Tab label="Item Twelve" {...a11yProps(11)} />
-        <Tab label="Item Thirteen" {...a11yProps(12)} />
+        {/* Map over the API topics array to generate tabs */}
+        {apiTopics.map((topic, index) => (
+          <Tab key={index} label={topic} {...a11yProps(index)} />
+        ))}
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-        Item Three
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-        Item Four
-        Item Four
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-        Item Five
-        Item Five
-        Item Five
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-        Item Six
-        Item Six
-        Item Six
-        Item Six
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-        Item Seven
-        Item Seven
-        Item Seven
-        Item Seven
-        Item Seven
-        Item Seven
-      </TabPanel>
-      <TabPanel value={value} index={7}>
-        Item Eight
-        Item Eight
-        Item Eight
-        Item Eight
-        Item Eight
-        Item Eight
-        Item Eight
-        Item Eight
-      </TabPanel>
-      <TabPanel value={value} index={8}>
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-        Item Nine
-      </TabPanel>
-      <TabPanel value={value} index={9}>
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-        Item Ten
-      </TabPanel>
-      <TabPanel value={value} index={10}>
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-        Item Eleven
-      </TabPanel>
-      <TabPanel value={value} index={11}>
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-        Item Twelve
-      </TabPanel>
-      <TabPanel value={value} index={12}>
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-        Item Thirteen
-      </TabPanel>
+      {/* Map over the API topics array to generate corresponding tab panels */}
+      {apiTopics.map((topic, index) => (
+        <TabPanel key={index} value={value} index={index}>
+          {/* Pass children directly to the TabPanel */}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet tellus auctor eros fermentum tincidunt.
+        </TabPanel>
+      ))}
     </Box>
   );
 }

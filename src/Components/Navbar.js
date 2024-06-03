@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SignIn from "../Pages/SignIn"
+import logo from "../Images/favicon.png"
+
 import {
   AppBar,
   Toolbar,
@@ -18,7 +20,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
-import FacebookIcon from '@material-ui/icons/Facebook';
+import Git from '@material-ui/icons/GitHub';
 import Search from "../Components/Search"
 
 
@@ -95,17 +97,17 @@ const Navbar = () => {
         ))}
       </List>
       <div className={classes.socialIcons}>
-        <IconButton color="inherit" href="https://www.linkedin.com/company/1323551/admin/">
+        <IconButton color="inherit" href="https://www.linkedin.com/rohit-chaudhary-038171158/">
           <LinkedInIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://twitter.com/Webners">
+        <IconButton color="inherit" href="#">
           <TwitterIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://www.youtube.com/channel/UCTay2tF7PbmFajzy1ODjSSA">
+        <IconButton color="inherit" href="#">
           <YouTubeIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://www.facebook.com/WebnerSolutions">
-          <FacebookIcon />
+        <IconButton color="inherit" href="https://www.github.com/thecrood">
+          <Git />
         </IconButton>
       </div>
     </div>
@@ -118,11 +120,20 @@ const Navbar = () => {
     <div className={classes.root}>
       <AppBar position="fixed" className={scrolled ? classes.appBarScrolled : classes.appBar}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} style={{color:textColor}} color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+          <IconButton edge="start" className={classes.menuButton} style={{color:textColor, paddingBottom: '15px'}} color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title} style={{color:textColor}}>
-            Navbar
+          <Typography variant="h6" className={classes.title} style={{ color: textColor, display: 'flex', alignItems: 'center'}}>
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className={classes.logo} 
+              style={{ width: '50px', height: '40px' }} // Adjust the width and height as needed
+            /> 
+            <span style={{ 
+            fontFamily: 'Robotic Text', // Change font style as needed
+            fontWeight: 'italic', // Change font weight as needed
+          }}>gifs</span>
           </Typography>
           <Search />
           <SignIn />

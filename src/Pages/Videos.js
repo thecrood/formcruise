@@ -42,18 +42,18 @@ const VideosPage = () => {
   const videos = [
     {
       id: 1,
-      url: 'https://www.youtube.com/embed/-dxaM5GGBaI',
-      title: 'Auto-fill ACORD Forms with JSON, Edit in the browser, ESigning, and more',
+      url: 'https://www.youtube.com/embed/CZ33fX4c6kY?si=Ev3H9rqKpPE6Mjao',
+      title: 'Video 1',
     },
     {
       id: 2,
-      url: 'https://www.youtube.com/embed/mioagc9aAAY',
-      title: 'How to prefill ACORD 90 and get it E-Signed',
+      url: 'https://www.youtube.com/embed/NSh8hgXfaEU?si=fmnz_reEE9g5c1us',
+      title: 'Video 2',
     },
     {
       id: 3,
-      url: 'https://www.youtube.com/embed/miwe3yrnK0M',
-      title: 'Present a simpler Web Form on top of an ACORD Form',
+      url: 'https://www.youtube.com/embed/YAyfr_mR9rk?si=Km7VWbPcNLJao_Ll',
+      title: 'Video 3',
     },
   ];
 

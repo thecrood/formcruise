@@ -134,11 +134,11 @@ function Home() {
             <div className={classes.root}>
                 <div className={classes.card}>
                     <Typography variant="h3" component="h1" style={{ color: '#078dc1', fontWeight: 'bold', fontSize: '2.7rem' }} gutterBottom>
-                        Autofill ACORD or other Forms in the Browser
+                    Retrieve images and text dynamically from a server upon button click.
                     </Typography>
 
                     <Typography variant="h6" component="h3" style={{ fontSize: '1rem',}} gutterBottom>
-                        Autofill PDF forms with data, Edit in the browser, Get forms E-Signed, Save PDF & data back to your system. Do all of this with REST API without coming over to the UI if you prefer so.
+                    Retrieve images and text from a server upon button click in the browser for dynamic content. This process triggers a server request, fetching the specified data, enhancing user experience with real-time updates and customization. It enables adaptability to changing requirements, catering to diverse user needs efficiently. This approach promotes scalability, flexibility, and responsiveness, enhancing usability.
                     </Typography>
 
                     <Button className={classes.button}> Get Strated</Button>
@@ -161,10 +161,10 @@ function Home() {
 
                 <div className={classes.rootA}>
                 <div className={classes.cardA}>
-                <Typography variant="h4" component="h1" style={{ color: '#078dc1', marginBottom:'4%' }}>Autofill ACORD Forms</Typography>
+                <Typography variant="h4" component="h1" style={{ color: '#078dc1', marginBottom:'4%' }}>Auto Fetch Images</Typography>
 
                     <Typography variant="h6" align="justify" style={{ fontSize: '1rem'}}>
-                    It has been a difficult problem to autofill ACORD forms and to bring them online for a long time. Form Cruise solves this problem. We are an ACORD Member so if you are an agency you can use the ACORD forms on our behalf. If you are not an agency you can still use our platform but you need to have the ACORD Forms license. We do provide all the latest forms out of the box but you can also upload any form (only once), and start using it. You can have a button in your system on Contact, Account, or Policy to launch the form, prefill it with data from your system and email it to a customer to complete or Sign. Form Cruise makes it easy to generate Insurance Certificates and send them to your clients with the click of a button. In addition, fill any supplementary forms as easily.
+                    Auto-fetching images involves a mechanism where images are automatically retrieved from a server or external source without explicit user action. This process typically occurs in the background, triggered by predefined events or intervals. By implementing auto-fetching, applications can continuously update their content, ensuring that users have access to the latest information without manual intervention. This enhances user experience by providing fresh and relevant visual content, improving engagement and retention. Additionally, auto-fetching can optimize resource utilization by fetching images preemptively, reducing load times and improving overall performance.
                     </Typography>
                 </div>
         
@@ -175,6 +175,30 @@ function Home() {
             </motion.div>
 
 
+
+        {/* div four */}
+        <motion.div
+                ref={ref3}
+                initial="hidden"
+                animate={inView3 ? "visible" : "hidden"}
+                variants={variants}
+            >
+
+                <div className={classes.rootA} >
+                <div className={classes.cardA}>
+
+                <Typography variant="h4" component="h1" style={{ color: '#078dc1', marginBottom:'4%' }}>Auto Fetch Text</Typography>
+
+                    <Typography variant="h6" align="justify" style={{ fontSize: '1rem'}}>
+                    Auto-fetching text involves automatically retrieving text content from a server or external source without user intervention. This process occurs in the background, often triggered by specific events or intervals. By implementing auto-fetching, applications can continuously update their text content, ensuring users receive the latest information seamlessly. This enhances user experience by providing fresh, relevant content and improving engagement. Additionally, auto-fetching can optimize performance by preloading text, reducing wait times, and ensuring the application remains responsive. This approach is particularly useful for news updates, live feeds, and dynamic content, maintaining a consistent flow of information.
+                     </Typography>
+                </div>
+        
+                <img src={Home4} alt="Your image description" align='center' className={classes.imageC} />
+
+                    </div>
+
+            </motion.div>
 
 
 
@@ -194,36 +218,10 @@ function Home() {
                 <Typography variant="h4" component="h1" style={{ color: '#078dc1', marginBottom:'4%' }}>Seamless integration through REST API</Typography>
 
                     <Typography variant="h6" align="justify" style={{ fontSize: '1rem'}}>
-                    Form Cruise can be used via the user interface or if you prefer use our REST API for complete integration. Our REST API is provided free of cost without any extra license or charges. You can use any programming language to integrate with Form Cruise REST API, which lets you perform all the operations including but not limited to uploading a new form, prefilling it with JSON from your system, providing the signatory information, sending form links to external users, and downloading the signed or filled PDF.                    </Typography>
+                    You can use our service to auto-fetch text and images via the user interface or, if you prefer, through our REST API for complete integration. Our REST API is free of cost, with no extra licenses or charges. You can use any programming language to integrate with our REST API, enabling you to perform all operations, including fetching new text and images, providing metadata information, sending links to external users, and downloading the fetched content.
+                    </Typography>
                 </div>
         
-
-                    </div>
-
-            </motion.div>
-
-
-
-
-            {/* div four */}
-            <motion.div
-                ref={ref3}
-                initial="hidden"
-                animate={inView3 ? "visible" : "hidden"}
-                variants={variants}
-            >
-
-                <div className={classes.rootA} >
-                <div className={classes.cardA}>
-
-                <Typography variant="h4" component="h1" style={{ color: '#078dc1', marginBottom:'4%' }}>Form Cruise works for any Industry</Typography>
-
-                    <Typography variant="h6" align="justify" style={{ fontSize: '1rem'}}>
-                    If you are not from the insurance industry but use editable PDF forms to collect data but you are not able to get these forms filled online then your problem is solved. You can publish your PDF form on Form Cruise, it will be displayed in the browser, you can send the link to your users, they can fill the data, submit the form, and the populated data is sent back to your system in the form of JSON, as well as PDF. You can then receive this JSON and save it in your system. Not only that you can also prefill some of the form fields to initialize the form when the user will open the form.                   
-                     </Typography>
-                </div>
-        
-                <img src={Home4} alt="Your image description" align='center' className={classes.imageC} />
 
                     </div>
 

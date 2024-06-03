@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, IconButton } from '@material-ui/core';
 import { Link } from '@mui/material';
-import { Facebook, LinkedIn, Twitter, YouTube } from '@mui/icons-material';
+import { LinkedIn, Twitter, YouTube, GitHub } from '@mui/icons-material';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +38,7 @@ function Footer() {
         </li>
         <li style={{ marginRight: '2rem' }}>
           <Link
-            href="https://webnersupport.com/"
+            href="#"
             variant="body2"
             color="textSecondary"
             align="left"
@@ -49,7 +49,7 @@ function Footer() {
         </li>
         <li>
           <Link
-            href="https://webnersolutions.com/privacy-policy/"
+            href="#"
             variant="body2"
             color="textSecondary"
             align="left"
@@ -63,16 +63,16 @@ function Footer() {
 
 
       <div style={{ display: 'flex', alignItems: 'center', marginRight:"70px" }}>
-            <IconButton href="https://www.facebook.com/WebnerSolutions">
-              <Facebook style={{ color: 'white' }} />
+            <IconButton href="https://www.github.com/thecrood">
+              <GitHub style={{ color: 'white' }} />
             </IconButton>
-            <IconButton href="https://www.linkedin.com/company/1323551/admin/">
+            <IconButton href="https://www.linkedin.com/rohit-chaudhary-038171158/">
               <LinkedIn style={{ color: 'white' }} />
             </IconButton>
-            <IconButton href="https://twitter.com/Webners">
+            <IconButton href="#">
               <Twitter style={{ color: 'white' }} />
             </IconButton>
-            <IconButton href="https://www.youtube.com/channel/UCTay2tF7PbmFajzy1ODjSSA">
+            <IconButton href="#">
               <YouTube style={{ color: 'white' }} />
             </IconButton>
           </div>
@@ -121,7 +121,7 @@ function Footer() {
     
     <div style={{ flexGrow: 1 }}></div>
     <p align="center" style={{ color: 'white', marginBottom: 0 }}>
-      © 2023 Compania mea
+      © 2024 Compania mea
     </p>
   </Container>
 </footer>
